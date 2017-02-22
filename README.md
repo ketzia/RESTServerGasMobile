@@ -1,0 +1,1 @@
+This is a Node.js server capable of receiving REST API queries
