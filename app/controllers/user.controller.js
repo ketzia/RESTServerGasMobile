@@ -48,7 +48,7 @@ exports.loginUser = function(req,res){
             // Todo mandar token en vez de esto
             res.status(200).send({msg:"Te has logueado satisfactoriamente"})
         }else{
-            res.status(401).send({msg:"Contraseña o usuario incorrecto"});
+            res.status(401).send({err:"Contraseña o usuario incorrecto"});
         }
     });
 
