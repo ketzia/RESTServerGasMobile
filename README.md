@@ -1,16 +1,16 @@
 #Proyecto Gas
 
-###Khé tranzaaaaaaa
+###Proyecto Gasolineras
 
 Proyecto para la materia Administración de proyectos de ingeniería de software (Ene 2017 Grupo 1).
 
 #Hecho por:
-	Keki
-	Erni
-	Danny
-	Tips
-	Yaks
-	Yoseph
+	Ketzia dante
+	Ernesto perez
+	Daniela Martin
+	Itzel Reeyes
+	Yukio Tsuru
+	Jose Manuel
 
 
-This is a Node.js server capable of receiving REST API queries
+Este es el repositorio de el servidor REST
