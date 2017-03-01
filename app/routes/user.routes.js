@@ -5,5 +5,7 @@ router.route('/usuarios')
     .get(UserController.getUsers)
     .post(UserController.postUser);
 
+router.route('/usuarios/login')
+    .post(UserController.loginUser);
 
 module.exports = router;
