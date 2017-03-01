@@ -12,12 +12,12 @@ exports.getUsers = function(req,res){
 };
 
 exports.postUser = function(req,res){
-
     // Verificar si todos los campos necesarios para crear un usuario estan presentes
     if(!req.body.email) return res.status(400).send({err: 'Se necesita un email para crear usuario'});
     if(!req.body.nombre) return res.status(400).send({err: 'Se necesita un nombre para crear usuario'});
     if(!req.body.apellidoPaterno) return res.status(400).send({err: 'Se necesita un apellido paterno para crear usuario'});
     if(!req.body.apellidoMaterno) return res.status(400).send({err: 'Se necesita un apellido materno para crear usuario'});
+    if(!req.body.password) return res.status(400).send({err: 'Se necesita una contrasenia para crear usuario'});
 
     // Empezar a crear el nuevo usuario
     var usuario = new Usuario();
@@ -25,9 +25,11 @@ exports.postUser = function(req,res){
     usuario.nombre = req.body.nombre;
     usuario.apellidoPaterno = req.body.apellidoPaterno;
     usuario.apellidoMaterno = req.body.apellidoMaterno;
+    usuario.setPassword(req.body.password);
 
     usuario.save(function(err){
        if(err) return res.status(500).send({err: err});
        res.status(200).json("Usuario creado");
     });
 };
+
