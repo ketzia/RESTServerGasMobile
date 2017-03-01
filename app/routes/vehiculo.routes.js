@@ -7,4 +7,7 @@ router.route('/vehiculos/usuario/:usuario_id')
 router.route('/vehiculos/create')
     .post(VehiculoController.createVehicle);
 
+router.route('/vehiculos')
+    .get(VehiculoController.getVehicles);
+
 module.exports = router;
