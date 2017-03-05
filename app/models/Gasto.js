@@ -1,7 +1,11 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema();
+var Schema = mongoose.Schema;
 
-var GastoSchema = new mongoose.Schema({
+var gastoSchema = new mongoose.Schema({
+    usuario: {
+        type: Schema.Types.ObjectId,
+        ref: 'Usuario'
+    },
     monto :{
         type:Number,
         required: true
@@ -10,10 +14,6 @@ var GastoSchema = new mongoose.Schema({
     fecha :{
         type: Date,
         required: true
-    },
-    usuario: {
-        type: Schema.Types.ObjectId,
-        ref: 'Usuario'
     }
 
 });
