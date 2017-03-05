@@ -11,3 +11,5 @@ var gasolineraSchema = new mongoose.Schema({
         ref: 'Delegacion'
     }
 });
+
+module.exports = mongoose.model('Gasolinera',gasolinerSchema);
