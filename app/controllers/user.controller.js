@@ -46,7 +46,9 @@ exports.loginUser = function(req,res){
         if(usuario.validPassword(req.body.password)){
             // Si la contraseña es valida entonces mandamos un 200
             // Todo mandar token en vez de esto
-            res.status(200).send({msg:"Te has logueado satisfactoriamente"})
+            var token = usuario.generateJwt();
+            console.log(token);
+            res.status(200).send({token:token})
         }else{
             res.status(401).send({err:"Contraseña o usuario incorrecto"});
         }

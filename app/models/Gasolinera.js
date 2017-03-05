@@ -7,8 +7,7 @@ var gasolineraSchema = new mongoose.Schema({
         type: String
     },
     delegacion: {
-    type: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Delegacion'
-
     }
 });
