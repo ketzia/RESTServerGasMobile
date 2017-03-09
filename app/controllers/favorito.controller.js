@@ -26,6 +26,11 @@ exports.addUserFavorite = function (req,res) {
         if(!usuario) return res.status(400).send({err:"No se encontró un usuario con ese id"});
         if(err) return res.status(500).send({err:err});
         //Se estan agregando favoritos
+        for(var i=0; i<usuario.favoritos.length;i++){
+            if(usuario.favoritos[i] === req.body.gasolinera_id){
+                return res.status(500).send({err: "Esa gasolinera ya está en tus favoritos"});
+            }
+        }
         usuario.favoritos.push(req.body.gasolinera_id);
         usuario.save(function(err){
             if(err) return res.status(500).send({err:err});
