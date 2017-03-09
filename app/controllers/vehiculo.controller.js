@@ -20,6 +20,10 @@ exports.getVehicles = function(req, res){
     });
 };
 
+exports.editVehicle = function(req,res){
+
+};
+
 exports.createVehicle = function(req,res){
 
     if(!req.body.usuario_id) return res.status(400).send({err : 'Se necesita un usuario'});
@@ -40,5 +44,6 @@ exports.createVehicle = function(req,res){
         // Todo enviar token
         res.status(200).send({msg:"Vehiculo creado"});
     });
+
 };
 

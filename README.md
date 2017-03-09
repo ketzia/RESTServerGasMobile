@@ -13,4 +13,3 @@ Proyecto para la materia Administración de proyectos de ingeniería de software
 	Jose Manuel
 
 
-Este es el repositorio de el servidor REST
