@@ -7,10 +7,14 @@ exports.getFavoriteByUser = function(req, res) {
     if (!req.params.usuario_id) return res.status(400).send({err: "Se necesita un usuario"});
     if (!isValid(req.params.usuario_id)) return res.status(400).send({err: "Usuario invalido"});
 
-    Favorito.find({usuario: new ObjectId(req.params.usuario_id)}, function (err, favoritos) {
-        console.log(req.params.usuario_id);
-        if (err) return res.status(500).send({err: err});
-        res.send(favoritos);
+    Usuario.findById(req.params.usuario_id, function(err, usuario){
+        if(!usuario) return res.status(400).send({err: "SNo se encontró un usuario con ese id"});
+        if(err) return res.status(500).send({err:err});
+
+        var json = {
+          favoritos : usuario.favoritos
+        };
+        return res.status(200).send(json);
     });
 };
 
