@@ -7,4 +7,7 @@ router.route('/gastos/usuario/:usuario_id')
 router.route('/gastos/create')
         .post(GastoController.createExpense);
 
+router.route('/gastos/delete/gasto/:gasto_id/usuario/:usuario_id')
+        .delete(GastoController.deleteExpense);
+
 module.exports = router;

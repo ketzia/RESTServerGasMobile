@@ -35,3 +35,21 @@ exports.createExpense = function(req,res){
         res.status(200).send({msg:"Gasto creado"});
     });
 };
+
+exports.deleteExpense = function(req,res){
+    if(!req.params.usuario_id) return res.status(400).send({err:err});
+    if(!req.params.gasto_id) return res.status(400).send({err:err});
+
+    Gasto.findById(req.params.gasto_id, function(err,gasto) {
+        if (!gasto) return res.status(400).send({err: "No se encontró ese gasto"});
+        if (err) return res.status(500).send({err: err});
+       // gasto.set('gasto_id', undefined, {strict: false} );
+
+        gasto.remove(function(err) {
+            if(err) return res.status(500).send({err:err});
+            return res.status(200).send({msg: 'Gasto removido'});
+        });
+
+
+    });
+};
