@@ -3,12 +3,11 @@ var Schema = mongoose.Schema;
 
 var favoritoSchema = new Schema({
     usuario: {
-        type: Schema.Types.ObjectId,
-        ref: 'Usuario'
+        type: number
+
     },
     gasolinera: {
-        type :Schema.Types.ObjectId,
-        ref: 'Gasolinera'
+        type :number
     }
 });
 
