@@ -6,9 +6,8 @@ var ObjectId = require("mongoose").Types.ObjectId;
 //preguntar sobre la promesa
 exports.getExpenseByUser = function(req,res){
     if(!req.params.usuario_id) return res.status(400).send({err: "Se necesita un usuario"});
-    //if(!isValid(req.params.usuario_id)) return res.status(400).send({err: "Se necesita un usuario válido"});
 
-    Gasto.find({usuario : new ObjectId(req.params.usuario_id)},function(err,gastos){
+    Gasto.find({usuario : req.params.usuario_id},function(err,gastos){
         console.log(req.params.usuario_id);
         if(err) return res.status(500).send({err:err});
         res.send(gastos);

@@ -7,7 +7,7 @@ var favoritoSchema = new Schema({
         required: true
     },
     gasolinera: {
-        type :number,
+        type : Number,
         required: true
     }
 });

@@ -38,7 +38,7 @@ exports.deleteUserFavorite = function(req,res){
     if(!req.params.gasolinera_id) return res.status(400).send({err: "Se necesita una gasolinera"});
 
     //Se checa si existe un usuario con el idea que se pasa en el url, o si se paso un usuario en el url
-    Favorito.find({usuario: req.params.usuario_id, gasolinera: req.params.gasolinera_id}, function(err,favorito) {
+    Favorito.findOne({usuario: req.params.usuario_id, gasolinera: req.params.gasolinera_id}, function(err,favorito) {
         if (!favorito) return res.status(400).send({err: "No se encontro ese favorito"});
         if (err) return res.status(500).send({err: err});
         // gasto.set('gasto_id', undefined, {strict: false} );
