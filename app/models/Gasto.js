@@ -3,13 +3,12 @@ var Schema = mongoose.Schema;
 
 var gastoSchema = new mongoose.Schema({
     usuario: {
-        type: Schema.Types.ObjectId,
-        ref: 'Usuario'
+        type: number,
+        required: true
     },
     monto :{
         type:Number,
         required: true
-
     },
     fecha :{
         type: Date,

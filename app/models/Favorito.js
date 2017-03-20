@@ -3,11 +3,12 @@ var Schema = mongoose.Schema;
 
 var favoritoSchema = new Schema({
     usuario: {
-        type: number
-
+        type: number,
+        required: true
     },
     gasolinera: {
-        type :number
+        type :number,
+        required: true
     }
 });
 
