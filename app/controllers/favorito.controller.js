@@ -10,7 +10,7 @@ exports.getFavoriteByUser = function(req, res) {
     Favorito.find({usuario : req.params.usuario_id},function(err,favoritos){
         //console.log(req.params.usuario_id);
         if(err) return res.status(500).send({err:err});
-        res.send(favoritos);
+        res.send({favoritos: favoritos});
     });
 };
 
