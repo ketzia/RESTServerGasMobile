@@ -18,7 +18,6 @@ exports.getExpenseByUser = function(req,res){
 
 exports.createExpense = function(req,res){
     if(!req.body.usuario_id) return res.status(400).send({err: "Se necesita un usuario"});
-    if(!isValid(req.body.usuario_id)) return res.status(400).send({err: 'Se necesita un usuario válido'});
     if(!req.body.monto) return res.status(400).send({err: "Se necesita un monto"});
     if(!req.body.fecha) return res.status(400).send({err: "Se necesita una fecha "});
     // A new expense is created

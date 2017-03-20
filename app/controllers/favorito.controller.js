@@ -5,7 +5,7 @@ var Usuario = require('../models/Usuario');
 
 exports.getFavoriteByUser = function(req, res) {
     if (!req.params.usuario_id) return res.status(400).send({err: "Se necesita un usuario"});
-    //if (!isValid(req.params.usuario_id)) return res.status(400).send({err: "Usuario invalido"});
+
 
     Favorito.find({usuario : req.params.usuario_id},function(err,favoritos){
         //console.log(req.params.usuario_id);
@@ -22,8 +22,8 @@ exports.addUserFavorite = function (req,res) {
     if(!req.body.gasolinera_id) return res.status(400).send({err: "Se necesita una gaoslinera"});
 
     var favorito = new Favorito();
-    favorito.usuario_id = req.body.usuario_id;
-    favorito.gasolinera_id = req.body.gasolinera_id;
+    favorito.usuario = req.body.usuario_id;
+    favorito.gasolinera = req.body.gasolinera_id;
 
     //Then we need to save all the data
     favorito.save(function(err){

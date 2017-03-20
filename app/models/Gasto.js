@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var gastoSchema = new mongoose.Schema({
     usuario: {
-        type: number,
+        type: Number,
         required: true
     },
     monto :{
