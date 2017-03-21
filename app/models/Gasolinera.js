@@ -12,4 +12,4 @@ var gasolineraSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Gasolinera',gasolinerSchema);
+module.exports = mongoose.model('Gasolinera',gasolineraSchema);
