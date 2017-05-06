@@ -1,4 +1,4 @@
 module.exports = {
-    url : 'mongodb://localhost:27017/gasMobile'
+    url : 'mongodb://ernesto:Windex1234@34.203.186.208:27017/gasMobile'
 };
 
